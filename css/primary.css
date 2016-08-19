@@ -50,13 +50,33 @@ header.landing {
 	border-radius: 10px;
 	color: white;
 	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 	width: 500px;
 }
 
 .landing-button-small {
 	font-size: 15px;
 	padding: 5px 10px;
+	opacity: 0.5;
+	animation: landing-pulse 1s ease-in-out 2s infinite;
+}
+
+@keyframes landing-pulse {
+	0% {
+		opacity: 0.5;
+		background-color: #00E02A;
+		border-bottom: 10px solid #20C40A;
+	}
+	50% {
+		opacity: 0.6;
+		background-color: #20C40A;
+		border-bottom: 10px solid #00E02A;
+	}
+	100% {
+		opacity: 0.5;
+		background-color: #00E02A;
+		border-bottom: 10px solid #20C40A;
+	}
 }
 
 landing-headline {
