@@ -82,3 +82,12 @@ header.landing {
 landing-headline {
 	text-transform: uppercase;
 }
+
+/*index.html*/
+.index-huge-right {
+	position: relative;
+	display: block;
+	font-size: 80px;
+	font-weight: 100;
+	text-align: right;
+}
