@@ -1,0 +1,108 @@
+---
+layout: default
+---
+
+<div class="container">
+  <h1>McIDE Plugin Config Generator</h1>
+  <h3>Yep, you can now easily generate your config files</h3>
+  <br>
+  <p>
+    First, choose a password to protect your server:
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" id="toggle-password-show">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </button>
+      </span>
+      <input type="password" id="password" placeholder="Password" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" id="generate-password">Generate!</button>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="well">
+      Then, choose if you want your server to protected with SSL.
+      Read more on <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Wikipedia</a>.
+      <br></br>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#ssl">SSL - more secure</a></li>
+        <li><a data-toggle="tab" href="#nossl">No SSL - easy</a></li>
+      </ul>
+      <br>
+      <div class="tab-content">
+
+        <div id="ssl" class="tab-pane fade in active">
+          <p>
+            <ul class="nav nav-pills">
+              <li class="active"><a data-toggle="tab" href="#have">I already have an certificate</a></li>
+              <li><a data-toggle="tab" href="#dont-have">I dont have an certificate</a></li>
+            </ul>
+            <br>
+            <div class="tab-content">
+
+              <div id="have" class="tab-pane fade in active">
+                <p>
+                  Check out the docs of keystore
+                  <a href="https://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html">here</a>.
+                  Generate a keystore with the filename <code>keystore</code>.
+                  Set the password for the keystore
+                  the same as the password for the certificate.
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button class="btn btn-danger" id="toggle-keystore-password-show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                      </button>
+                    </span>
+                    <input type="password" id="keystore-password" placeholder="Keystore password" class="form-control">
+                  </div>
+                </p>
+              </div>
+
+              <div id="dont-have" class="tab-pane fade">
+                <p>
+                  <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="tab" href="#auto-generate">Autogenerate one for me</a></li>
+                    <li><a data-toggle="tab" href="#self-generate">I will generate it myself</a></li>
+                  </ul>
+                  <br>
+                  <div class="tab-content">
+
+                    <div id="auto-generate" class="tab-pane fade in active">
+                      <p></p>
+                    </div>
+
+                    <div id="self-generate" class="tab-pane fade">
+                      <p></p>
+                    </div>
+                  </div>
+                </p>
+              </div>
+            </div>
+          </p>
+        </div>
+
+        <div id="nossl" class="tab-pane fade">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-warning disabled" id="generate">Loading config!</button>
+    <br><br>
+    <textarea id="output" rows="20" class="form-control hidden"></textarea>
+  </p>
+  <h2><a href="javascript:window.history.back();">Go Back</a></h2>
+
+  <br>
+  <br>
+  <br>
+
+  We are are using
+  <a href="https://github.com/nodeca/js-yaml">js-yaml</a>
+  to help generating your config!
+</div>
+
+<script src="https://cdn.rawgit.com/jquery/esprima/2.7.2/esprima.js"></script>
+<script src="/mcide/js/js-yaml.min.js"></script>
+<script src="/mcide/js/generator.js"></script>
