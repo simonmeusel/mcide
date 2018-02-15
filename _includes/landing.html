@@ -1,13 +1,14 @@
 <style media="screen">
-html, body {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-}
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
 
-.default-navbar {
-	display: none;
-}
+	.default-navbar {
+		display: none;
+	}
 </style>
 
 <header class="landing">
@@ -17,12 +18,14 @@ html, body {
 	</div>
 	<div class="landing-button-wrapper">
 		<h1 class="landing-headline" id="landing-headline">Download now!</h1>
+		<br>{% include buttons.html %}
 		<br>
-		{% include buttons.html %}
-		Because mojang has
-                implemented this feature directly into
+		<br>
+		<br>Because mojang has implemented this feature directly into
 		<a href="https://minecraft.gamepedia.com/Function">minecraft 1.12</a>, McIDE is no longer maintained.
-		<br><br><br><br><br>
+		<br>
+		<br>
+		<br>
 		<a onclick="$(window).scrollTo('#down', 500)" class="landing-button landing-button-small">go down</a>
 	</div>
 </header>
